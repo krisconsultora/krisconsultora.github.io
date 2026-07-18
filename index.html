@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Kris - Consultora Poupacred | Crédito do Trabalhador</title>
-<meta name="description" content="Conheça a Kris, entenda o Crédito do Trabalhador e decida com mais informação.">
+<title>Crédito do Trabalhador: simule e contrate | Kris — Consultora Poupacred</title>
+<meta name="description" content="Simule o Crédito do Trabalhador (consignado CLT), compare os juros com cartão e cheque especial e contrate online com a orientação da Kris, consultora Poupacred.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Kris — Consultora Poupacred">
 <meta name="theme-color" content="#0A2A3D">
 <link rel="canonical" href="https://krisconsultora.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A2A3D'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='600' fill='%23D6A94B' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
@@ -12,10 +14,16 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:url" content="https://krisconsultora.github.io/">
 <meta property="og:site_name" content="Kris — Consultora Poupacred">
-<meta property="og:title" content="Kris - Consultora Poupacred | Crédito do Trabalhador">
-<meta property="og:description" content="Conheça a Kris, entenda o Crédito do Trabalhador e decida com mais informação.">
+<meta property="og:title" content="Crédito do Trabalhador: simule e contrate | Kris — Consultora Poupacred">
+<meta property="og:description" content="Simule o Crédito do Trabalhador (consignado CLT), compare os juros e contrate online com a orientação da Kris, consultora Poupacred.">
 <meta property="og:image" content="https://krisconsultora.github.io/src/img/kris_consultora.png">
+<meta property="og:image:width" content="1023">
+<meta property="og:image:height" content="1537">
+<meta property="og:image:alt" content="Kris, consultora financeira Poupacred">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crédito do Trabalhador: simule e contrate | Kris — Consultora Poupacred">
+<meta name="twitter:description" content="Simule o Crédito do Trabalhador (consignado CLT), compare os juros e contrate online com a orientação da Kris.">
+<meta name="twitter:image" content="https://krisconsultora.github.io/src/img/kris_consultora.png">
 <link rel="preload" as="image" href="src/img/kris_consultora.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,6 +77,7 @@
   img{max-width:100%;display:block;}
   button{font-family:inherit;cursor:pointer;}
   :focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+  ::selection{background:var(--red);color:#fff;}
 
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
@@ -83,11 +92,11 @@
   }
   section, header.hero{
     position:relative;
-    padding:84px 0 96px;
+    padding:60px 0 68px;
     scroll-margin-top:64px;
   }
   @media (max-width:720px){
-    section, header.hero{padding:60px 0 68px;}
+    section, header.hero{padding:44px 0 52px;}
   }
 
   /* ---------- Progress rail ---------- */
@@ -233,8 +242,8 @@
   .eyebrow .chip{
     padding:4px 10px;
     border-radius:999px;
-    background:var(--navy);
-    color:var(--gold-soft);
+    background:var(--red);
+    color:#fff;
     font-weight:500;
   }
 
@@ -256,15 +265,7 @@
     align-items:center;
     gap:10px;
     min-height:56vh;
-    padding:0 0 16px;
-  }
-  .hero-grid::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-    background:linear-gradient(270deg, transparent 0%, var(--cream) 40%, var(--cream) 60%, rgba(246,242,233,0.5) 70%, rgba(246,242,233,0.2) 85%, rgba(246,242,233,0) 100%);
+    padding-bottom:16px;
   }
   @media (max-width:900px){
     header.hero{padding-top:105px;}
@@ -272,9 +273,6 @@
       flex-direction:column;
       min-height:auto;
       padding-bottom:12px;
-    }
-    .hero-grid::before{
-      background:linear-gradient(180deg, var(--cream) 0%, var(--cream) 52%, rgba(246,242,233,0.88) 68%, rgba(246,242,233,0) 88%);
     }
   }
   .hero-portrait{
@@ -357,10 +355,11 @@
   .hero-photo-blur{
     position:absolute;
     inset:0;
-    filter:blur(16px) brightness(0.97) saturate(1.03);
-    transform:scale(1.06);
-    -webkit-mask-image:linear-gradient(90deg, transparent 0%, transparent 20%, rgba(0,0,0,0.15) 50%, transparent 85%);
-    mask-image:linear-gradient(90deg, transparent 0%, transparent 20%, rgba(0,0,0,0.15) 50%, transparent 85%);
+    filter:blur(18px) brightness(0.97) saturate(1.03);
+    transform:scale(1.05);
+    opacity:0.4;
+    -webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 55%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.08) 55%, transparent 80%);
+    mask-image:radial-gradient(ellipse 60% 50% at 50% 55%, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.08) 55%, transparent 80%);
   }
   .hero-photo-sharp{
     position:relative;
@@ -368,8 +367,9 @@
   }
   @media (max-width:900px){
     .hero-photo-blur{
-      -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 24%, rgba(0,0,0,0.45) 38%, transparent 52%);
-      mask-image:linear-gradient(180deg, #000 0%, #000 24%, rgba(0,0,0,0.45) 38%, transparent 52%);
+      opacity:0.35;
+      -webkit-mask-image:linear-gradient(180deg, transparent 0%, transparent 12%, rgba(0,0,0,0.4) 28%, rgba(0,0,0,0.45) 38%, transparent 52%);
+      mask-image:linear-gradient(180deg, transparent 0%, transparent 12%, rgba(0,0,0,0.4) 28%, rgba(0,0,0,0.45) 38%, transparent 52%);
     }
   }
   .hero-copy{
@@ -383,30 +383,6 @@
   @media (max-width:720px){
     .hero-copy{padding:16px 0;}
   }
-  .hero-brand{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-top:14px;
-    padding:8px 14px;
-    border-radius:999px;
-    background:rgba(255,255,255,0.72);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.66rem;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--navy);
-    box-shadow:0 8px 24px rgba(10,42,61,0.06);
-  }
-  .hero-brand .swatch{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--red);
-    flex-shrink:0;
-  }
   .hero h1{
     margin-top:24px;
     font-size:clamp(2.6rem, 5.6vw, 4.4rem);
@@ -419,21 +395,13 @@
   .hero-title-sub{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:8px;
     margin-top:14px;
     font-family:'Fraunces', serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:1.18rem;
-    letter-spacing:0.01em;
-    color:var(--petrol);
-  }
-  .hero-title-sub .sep{
-    width:28px;
-    height:1.4px;
-    background:var(--gold);
-    border-radius:2px;
-    flex-shrink:0;
+    font-weight:600;
+    font-size:1.22rem;
+    letter-spacing:-0.01em;
+    color:var(--navy);
   }
   .hero-title-sub img{
     height:22px;
@@ -519,7 +487,7 @@
     justify-content:center;
     padding:0 0 0;
   }
-  .seam svg{width:26px;height:40px;color:var(--line);}
+  .seam svg{width:26px;height:24px;color:var(--line);}
 
   /* ---------- FASE OBJETIVO (entre Fase 01 e Fase 02) ---------- */
   .phase-objetivo{background:var(--cream);}
@@ -553,12 +521,12 @@
   .obj-card .obj-icon{
     width:38px; height:38px;
     border-radius:11px;
-    background:var(--navy);
-    color:var(--gold-soft);
+    background:rgba(211,0,0,0.08);
+    color:var(--red);
     display:flex;align-items:center;justify-content:center;
-    transition:background var(--dur-fast) var(--ease);
+    transition:background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
   }
-  .obj-card.is-selected .obj-icon{background:var(--red);}
+  .obj-card.is-selected .obj-icon{background:var(--red); color:#fff;}
   .obj-card .obj-icon svg{width:19px;height:19px;}
   .obj-card h3{font-size:1.02rem; color:var(--navy); font-family:'Plus Jakarta Sans', sans-serif; font-weight:700;}
   .obj-card .obj-range{
@@ -862,7 +830,7 @@
       radial-gradient(circle at 88% 82%, rgba(214,169,75,0.10), transparent 45%),
       var(--navy);
     color:#fff;
-    padding-top:165px;
+    padding-top:140px;
     overflow:hidden;
   }
   .phase-03::before{
@@ -877,7 +845,7 @@
     border-radius:0 0 100% 100%;
   }
   @media (max-width:720px){
-    .phase-03{padding-top:120px;}
+    .phase-03{padding-top:104px;}
     .phase-03::before{height:60px;}
   }
   .phase-03 .phase-head h2{color:#fff;}
@@ -945,7 +913,9 @@
 
   /* ---------- FINAL SECTION ---------- */
   .final-section{
-    background:var(--cream);
+    background:
+      radial-gradient(circle at 50% 0%, rgba(214,169,75,0.12), transparent 55%),
+      var(--cream);
     text-align:center;
   }
   .final-section h2{
@@ -1001,6 +971,25 @@
     font-size:0.92rem;
   }
   .footer-links a:hover{color:#fff;}
+  .footer-matriz{
+    margin-top:28px;
+    padding-top:24px;
+  }
+  .footer-matriz .mono{
+    color:var(--gold-soft);
+    font-size:0.62rem;
+  }
+  .footer-matriz p{
+    margin-top:10px;
+    font-size:0.82rem;
+    line-height:1.7;
+    color:rgba(255,255,255,0.6);
+  }
+  .footer-matriz a{
+    color:rgba(255,255,255,0.8);
+    text-decoration:underline;
+  }
+  .footer-matriz a:hover{color:#fff;}
   .disclaimer{
     margin-top:28px;
     font-size:0.78rem;
@@ -1036,16 +1025,82 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Kris — Consultora Poupacred",
-  "url": "https://krisconsultora.github.io/",
-  "inLanguage": "pt-BR",
-  "description": "Conheça a Kris, entenda o Crédito do Trabalhador e decida com mais informação.",
-  "about": {
-    "@type": "FinancialProduct",
-    "name": "Crédito do Trabalhador",
-    "category": "Crédito consignado"
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://krisconsultora.github.io/#website",
+      "name": "Kris — Consultora Poupacred",
+      "url": "https://krisconsultora.github.io/",
+      "inLanguage": "pt-BR",
+      "description": "Simule o Crédito do Trabalhador (consignado CLT), compare os juros e contrate online com a orientação da Kris, consultora Poupacred.",
+      "about": {
+        "@type": "FinancialProduct",
+        "name": "Crédito do Trabalhador",
+        "category": "Crédito consignado"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://krisconsultora.github.io/#kris",
+      "name": "Kris",
+      "jobTitle": "Consultora financeira",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Poupacred",
+        "legalName": "Poupacred Processamento de Dados Ltda",
+        "taxID": "07.899.160/0001-63",
+        "url": "https://poupacred.com.br",
+        "telephone": "+55-18-3344-6666",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Desbravador Ceará, 465 — Pav. Térreo",
+          "addressLocality": "Presidente Prudente",
+          "addressRegion": "SP",
+          "postalCode": "19015-190",
+          "addressCountry": "BR"
+        }
+      },
+      "image": "https://krisconsultora.github.io/src/img/kris_consultora.png",
+      "url": "https://krisconsultora.github.io/",
+      "sameAs": ["https://www.instagram.com/krisdhya.poupacred/"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://krisconsultora.github.io/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quem pode contratar o Crédito do Trabalhador?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Trabalhadores com carteira assinada (CLT), incluindo domésticos e rurais, desde que tenham margem consignável disponível." }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o Crédito do Trabalhador?",
+          "acceptedAnswer": { "@type": "Answer", "text": "As parcelas são fixas e descontadas diretamente da folha de pagamento, sem necessidade de boletos." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais garantias são aceitas?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Parte do saldo do FGTS e a multa rescisória podem ser usadas como garantia adicional, conforme as regras do programa." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto da renda o Crédito do Trabalhador compromete?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A margem consignável costuma chegar a até 35% da renda mensal, para manter o orçamento sob controle." }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que os juros do Crédito do Trabalhador são menores?",
+          "acceptedAnswer": { "@type": "Answer", "text": "O desconto garantido em folha reduz o risco para o banco — por isso as taxas tendem a ser menores que as do empréstimo pessoal, cheque especial e cartão rotativo." }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde solicitar o Crédito do Trabalhador?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pelo aplicativo Carteira de Trabalho Digital (CTPS Digital) ou pelos canais da instituição financeira habilitada, como o ambiente de contratação da Poupacred." }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -1057,25 +1112,25 @@
 <nav class="rail" aria-label="Progresso da jornada">
   <div class="rail-brand"><span class="dot"></span> Kris <span class="full">— Consultoria</span></div>
   <div class="rail-steps" id="railSteps">
-    <button class="rail-step is-active" data-goto="fase-01" data-phase="1" aria-current="step" aria-label="Fase 1: Conhecer">
+    <button class="rail-step is-active" data-goto="fase-01" data-phase="1" aria-current="step" aria-label="Etapa 1: Conhecer">
       <span class="num">01</span><span class="label" aria-hidden="true">Conhecer</span>
     </button>
     <span class="rail-connector"></span>
-    <button class="rail-step is-locked" data-goto="fase-02" data-phase="2" aria-label="Fase 2: Objetivo">
+    <button class="rail-step is-locked" data-goto="fase-02" data-phase="2" aria-label="Etapa 2: Objetivo">
       <span class="num">
         <svg class="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
       </span>
       <span class="label" aria-hidden="true">Objetivo</span>
     </button>
     <span class="rail-connector"></span>
-    <button class="rail-step is-locked" data-goto="fase-03" data-phase="3" aria-label="Fase 3: Entender">
+    <button class="rail-step is-locked" data-goto="fase-03" data-phase="3" aria-label="Etapa 3: Entender">
       <span class="num">
         <svg class="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
       </span>
       <span class="label" aria-hidden="true">Entender</span>
     </button>
     <span class="rail-connector"></span>
-    <button class="rail-step is-locked" data-goto="fase-04" data-phase="4" aria-label="Fase 4: Contratar">
+    <button class="rail-step is-locked" data-goto="fase-04" data-phase="4" aria-label="Etapa 4: Contratar">
       <span class="num">
         <svg class="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
       </span>
@@ -1103,12 +1158,10 @@
       </div>
     </div>
     <div class="hero-copy">
-      <div class="eyebrow reveal in"><span class="chip">Fase 01</span> Primeiro, vamos nos conhecer</div>
-      <div class="hero-brand reveal in d1"><span class="swatch"></span> Kris - Consultora Poupacred</div>
-      <h1 class="reveal in d1">Oi, eu sou a <em>Kris</em>.</h1>
+      <div class="eyebrow reveal in"><span class="chip">Etapa 01</span> Primeiro, vamos nos conhecer</div>
+      <h1 class="reveal in d1" id="heroTitle">Oi, eu sou a <em>Kris</em>.</h1>
       <div class="hero-title-sub reveal in d1">
         <span>Consultora financeira</span>
-        <span class="sep" aria-hidden="true"></span>
         <img src="src/img/logo-poupacred.png" alt="Poupacred">
       </div>
       <p class="hero-sub reveal in d2">Meu objetivo é tornar crédito algo simples, claro e fácil de entender. Aqui você explora suas opções, tira dúvidas e decide com mais segurança.</p>
@@ -1121,7 +1174,7 @@
       </div>
       <div class="unlock-toast" id="toast01">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
-        Fase 01 desbloqueada
+        Etapa 01 desbloqueada
       </div>
     </div>
   </div>
@@ -1133,7 +1186,7 @@
 <section class="phase-objetivo" id="fase-02" data-phase-section="2">
   <div class="wrap">
     <div class="phase-head">
-      <div class="eyebrow reveal"><span class="chip">Fase 02</span> Vamos entender seu momento</div>
+      <div class="eyebrow reveal"><span class="chip">Etapa 02</span> Vamos entender seu momento</div>
       <h2 class="reveal">Qual o objetivo do seu dinheiro extra?</h2>
       <p class="reveal d1">Arraste o valor no simulador ou escolha um objetivo e veja como o Crédito do Trabalhador se compara a outras formas de crédito.</p>
     </div>
@@ -1223,7 +1276,7 @@
 <section class="phase-02" id="fase-03" data-phase-section="3">
   <div class="wrap">
     <div class="phase-head">
-      <div class="eyebrow reveal"><span class="chip">Fase 03</span> Agora, vamos entender</div>
+      <div class="eyebrow reveal"><span class="chip">Etapa 03</span> Agora, vamos entender</div>
       <h2 class="reveal">O que é o Crédito do Trabalhador?</h2>
       <p class="reveal d1">É um crédito consignado para quem trabalha com carteira assinada: as parcelas saem direto da folha de pagamento, o que permite juros bem mais baixos. Veja as respostas para as principais dúvidas.</p>
     </div>
@@ -1278,7 +1331,7 @@
       </button>
       <div class="unlock-toast" id="toast02" style="margin-top:0;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
-        Fase 03 desbloqueada
+        Etapa 03 desbloqueada
       </div>
     </div>
   </div>
@@ -1290,7 +1343,7 @@
 <section class="phase-03" id="fase-04" data-phase-section="4">
   <div class="wrap">
     <div class="phase-head">
-      <div class="eyebrow reveal"><span class="chip">Fase 04</span> Você chegou ao último nível</div>
+      <div class="eyebrow reveal"><span class="chip">Etapa 04</span> Você chegou ao último nível</div>
       <h2 class="reveal">Pronto para dar o próximo passo?</h2>
       <p class="reveal d1">Se você já entendeu o processo e deseja prosseguir, pode acessar o ambiente de contratação.</p>
     </div>
@@ -1299,7 +1352,7 @@
       <div class="final-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
-      <div class="mono" style="color:var(--gold-soft); font-size:0.68rem;">Fase 04 desbloqueada</div>
+      <div class="mono" style="color:var(--gold-soft); font-size:0.68rem;">Etapa 04 desbloqueada</div>
       <h2 style="margin-top:14px;">Jornada desbloqueada.</h2>
       <p>Agora você tem mais informações para decidir qual é o próximo passo para você.</p>
 
@@ -1353,8 +1406,15 @@
         <div class="col">
           <span class="mono">Contato</span>
           <a href="#" id="whatsappBtn3" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+          <a href="https://www.instagram.com/krisdhya.poupacred/" target="_blank" rel="noopener noreferrer">Instagram @krisdhya.poupacred</a>
         </div>
       </div>
+    </div>
+    <div class="footer-matriz">
+      <span class="mono">Poupacred — Matriz</span>
+      <p>Poupacred Processamento de Dados Ltda &middot; CNPJ 07.899.160/0001-63<br>
+      Rua Desbravador Ceará, 465 — Pav. Térreo &middot; CEP 19015-190 &middot; Presidente Prudente – SP<br>
+      Matriz: (18) 3344-6666 &middot; Canal Direto: 0800 580 7070 (seg. a sex., 9h às 18h) &middot; <a href="https://poupacred.com.br" target="_blank" rel="noopener noreferrer">poupacred.com.br</a></p>
     </div>
     <p class="disclaimer">As condições, valores, taxas, prazos e aprovação estão sujeitos aos critérios e condições aplicáveis ao processo de contratação. Esta página não garante aprovação, taxas ou valores específicos.</p>
   </div>
@@ -1368,6 +1428,20 @@
   applyMotionPref();
   mq.addEventListener ? mq.addEventListener('change', applyMotionPref) : mq.addListener(applyMotionPref);
   var reduceMotion = mq.matches;
+
+  // ---------- Saudação personalizada via ?n=Nome ----------
+  try {
+    var clientName = (new URLSearchParams(window.location.search).get('n') || '').trim();
+    if(clientName){
+      if(clientName.length > 40) clientName = clientName.slice(0, 40);
+      clientName = clientName.replace(/(^|\s)(\S)/g, function(m, sep, letra){ return sep + letra.toUpperCase(); });
+      var heroTitle = document.getElementById('heroTitle');
+      if(heroTitle && heroTitle.firstChild && heroTitle.firstChild.nodeType === Node.TEXT_NODE){
+        // textContent: o nome entra como texto puro, nunca como HTML
+        heroTitle.firstChild.textContent = 'Oi ' + clientName + ', eu sou a ';
+      }
+    }
+  } catch(e){ /* URLSearchParams indisponível: mantém saudação padrão */ }
 
   // ---------- WhatsApp config ----------
   var WHATSAPP_NUMBER = "5518920012343";
