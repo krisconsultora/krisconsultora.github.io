@@ -22,7 +22,7 @@ A página utiliza um design moderno, responsivo e móvel-first, com animações 
 - A experiência é narrativa, sem bloqueios artificiais: o usuário pode rolar livremente entre fases.
 - Há um CTA direto para contratação e um CTA alternativo para contato via WhatsApp.
 - A animação de confetes respeita `prefers-reduced-motion` e executa apenas uma vez.
-- O botão WhatsApp está configurado com um número fictício e deve ser atualizado antes do lançamento.
+- Os botões de WhatsApp usam o número real da Kris, configurado na constante `WHATSAPP_NUMBER` do `index.html`.
 
 ## Links relevantes
 
@@ -33,6 +33,4 @@ A página utiliza um design moderno, responsivo e móvel-first, com animações 
 
 ## Próximos passos
 
-- Inserir a foto profissional da Kris no espaço reservado do hero.
-- Atualizar o `WHATSAPP_NUMBER` no `index.html` com o número real.
 - Revisar textos e garantir conformidade com as regras de comunicação de crédito.

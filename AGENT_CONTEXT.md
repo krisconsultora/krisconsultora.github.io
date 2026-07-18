@@ -75,7 +75,7 @@ Principais elementos técnicos:
 
 ## Observações para agentes
 
-- O WhatsApp ainda usa um número fictício `5500000000000` e deve ser atualizado com o número real da Kris.
+- O WhatsApp está configurado com o número real da Kris (`5518920012343`) na constante `WHATSAPP_NUMBER` do `index.html`.
 - O site já inclui a animação de confetes, mas ela dispara apenas uma vez por visita.
 - Embora exista um bloco de seleção de objetivos de crédito, a narrativa principal permanece focada em conhecer, entender e contratar.
 - A página atual usa um fluxo visual que inclui um conteúdo de objetivo e um comparativo de crédito antes de chegar à fase final.
