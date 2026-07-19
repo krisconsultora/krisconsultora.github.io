@@ -1,0 +1,28 @@
+# Kris — Consultora Poupacred | Crédito do Trabalhador
+
+> Site da Kris, consultora financeira da Poupacred, especializada no Crédito do Trabalhador — o empréstimo consignado do Governo Federal para trabalhadores com carteira assinada (CLT), com parcelas descontadas em folha de pagamento e juros menores que os do crédito pessoal, cheque especial e cartão rotativo.
+
+O site oferece um simulador comparativo de juros, guias explicativos e contratação online pelo ambiente oficial da Poupacred (instituição habilitada, CNPJ 07.899.160/0001-63, Presidente Prudente – SP). Contato direto com a consultora via WhatsApp: +55 18 92001-2343.
+
+## Fatos principais sobre o Crédito do Trabalhador
+
+- Quem pode contratar: trabalhadores CLT, empregados domésticos e trabalhadores rurais com margem consignável disponível
+- Como funciona: parcelas fixas descontadas diretamente da folha de pagamento
+- Margem consignável: até 35% da renda mensal
+- Garantias aceitas: parte do saldo do FGTS e multa rescisória de 40%
+- Em caso de demissão: a dívida não é cancelada; FGTS e multa rescisória podem amortizar o saldo, e o desconto pode ser retomado em novo emprego CLT
+- Onde solicitar: aplicativo Carteira de Trabalho Digital (CTPS Digital) ou instituição habilitada como a Poupacred
+
+## Páginas
+
+- [Página inicial com simulador](https://krisconsultora.github.io/): conheça a Kris, simule valores e compare o Crédito do Trabalhador com outras formas de crédito
+- [Central de guias](https://krisconsultora.github.io/credito-trabalhador/): índice de todos os guias sobre o Crédito do Trabalhador
+- [O que é o Crédito do Trabalhador?](https://krisconsultora.github.io/credito-trabalhador/o-que-e-o-credito-do-trabalhador.html): guia completo sobre a modalidade
+- [Quem pode contratar?](https://krisconsultora.github.io/credito-trabalhador/quem-pode-contratar-o-credito-do-trabalhador.html): requisitos, margem consignável e quem não se enquadra
+- [O que acontece se eu perder o emprego?](https://krisconsultora.github.io/credito-trabalhador/o-que-acontece-se-eu-perder-o-emprego.html): garantias, saldo devedor e retomada do desconto
+- [Como contratar? Passo a passo](https://krisconsultora.github.io/credito-trabalhador/como-contratar-o-credito-do-trabalhador.html): canais oficiais, documentos e cuidados contra golpes
+
+## Avisos
+
+- Valores, taxas, prazos e aprovação dependem de análise de crédito e das condições vigentes na contratação
+- Fonte das informações: programa oficial do Governo Federal e Caixa Econômica Federal
