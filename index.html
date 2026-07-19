@@ -239,13 +239,6 @@
     color:var(--muted);
     margin-bottom:22px;
   }
-  .eyebrow .chip{
-    padding:4px 10px;
-    border-radius:999px;
-    background:var(--red);
-    color:#fff;
-    font-weight:500;
-  }
 
   /* ---------- HERO / FASE 01 ---------- */
   header.hero{
@@ -274,6 +267,18 @@
       min-height:auto;
       padding-bottom:12px;
     }
+    /* saudação sobreposta ao final da foto no mobile */
+    .hero-copy{position:relative; z-index:3; margin-top:-150px;}
+    /* CTAs empilhados em largura total */
+    .hero-copy .cta-row{
+      flex-direction:column;
+      align-items:stretch;
+      gap:12px;
+    }
+    .hero-copy .cta-row .btn{
+      width:100%;
+      justify-content:center;
+    }
   }
   .hero-portrait{
     flex-shrink:0;
@@ -287,8 +292,8 @@
   }
   @media (max-width:900px){
     .hero-portrait{
-      width:min(300px, 72%);
-      max-height:min(420px, 42vh);
+      width:min(400px, 94%);
+      max-height:min(560px, 58vh);
       margin:0 auto;
     }
   }
@@ -334,7 +339,7 @@
     100%{box-shadow:0 0 0 0 rgba(30,138,97,0); opacity:1;}
   }
   @media (max-width:900px){
-    .online-badge{bottom:2%; font-size:0.72rem; padding:12px 18px;}
+    .online-badge{bottom:24%; right:0; font-size:0.72rem; padding:12px 18px;}
   }
   .hero-photo-stack{
     position:relative;
@@ -450,7 +455,7 @@
   .btn-ghost{
     background:transparent;
     color:var(--navy);
-    border:1.4px solid var(--line);
+    border:1.4px solid rgba(10,42,61,0.28);
   }
   .btn-ghost:hover{border-color:var(--navy); background:rgba(10,42,61,0.04);}
   .btn-gold{
@@ -461,26 +466,6 @@
   .btn-gold:hover{box-shadow:0 16px 36px rgba(214,169,75,0.45);}
   .btn-arrow{transition:transform var(--dur-fast) var(--ease);}
   .btn:hover .btn-arrow{transform:translateX(3px);}
-
-  .unlock-toast{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    margin-top:26px;
-    padding:10px 16px;
-    border-radius:999px;
-    background:var(--navy);
-    color:var(--gold-soft);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    opacity:0;
-    transform:translateY(10px);
-    transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
-  }
-  .unlock-toast.in{opacity:1; transform:translateY(0);}
-  .unlock-toast svg{width:13px;height:13px;}
 
   /* ---------- Section divider "vault seam" ---------- */
   .seam{
@@ -852,7 +837,6 @@
   .phase-03 .phase-head h2{color:#fff;}
   .phase-03 .phase-head p{color:rgba(255,255,255,0.72);}
   .phase-03 .phase-head .eyebrow{color:rgba(255,255,255,0.75);}
-  .phase-03 .eyebrow .chip{background:var(--red); color:#fff;}
   .final-card{
     max-width:760px;
     margin:0 auto;
@@ -999,6 +983,120 @@
     max-width:900px;
   }
 
+  /* ---------- Botão flutuante da Kris ---------- */
+  .fab-kris{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:70;
+    display:block;
+    width:76px;
+    height:76px;
+    border-radius:50%;
+    background:linear-gradient(160deg, var(--red), var(--red-deep));
+    box-shadow:0 12px 30px rgba(211,0,0,0.35), 0 0 0 3px #fff;
+    opacity:0;
+    transform:translateY(24px) scale(0.7);
+    pointer-events:none;
+    transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur-fast) var(--ease);
+  }
+  .fab-kris.show{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    pointer-events:auto;
+  }
+  .fab-kris.show:hover{
+    transform:translateY(-3px) scale(1.07);
+    box-shadow:0 16px 40px rgba(211,0,0,0.45), 0 0 0 3px #fff;
+  }
+  .fab-kris.show::before{
+    content:"";
+    position:absolute;
+    inset:-3px;
+    border-radius:50%;
+    border:2px solid rgba(211,0,0,0.5);
+    animation:fabRing 2.2s var(--ease) infinite;
+    pointer-events:none;
+  }
+  @keyframes fabRing{
+    0%{transform:scale(1); opacity:0.8;}
+    70%{transform:scale(1.45); opacity:0;}
+    100%{transform:scale(1.45); opacity:0;}
+  }
+  .fab-kris img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+  }
+  @keyframes fabPop{
+    0%{transform:scale(0.55);}
+    60%{transform:scale(1.16);}
+    100%{transform:scale(1);}
+  }
+  .fab-kris.pop img{animation:fabPop 480ms var(--ease);}
+  .fab-kris .fab-wpp{
+    position:absolute;
+    right:-2px;
+    bottom:-2px;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:2px solid #fff;
+  }
+  .fab-kris .fab-wpp svg{width:16px;height:16px;}
+  .fab-bubble{
+    position:absolute;
+    right:calc(100% + 14px);
+    bottom:10px;
+    max-width:210px;
+    width:max-content;
+    padding:10px 14px;
+    border-radius:14px 14px 4px 14px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    box-shadow:0 10px 26px rgba(10,42,61,0.16);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-size:0.84rem;
+    font-weight:600;
+    line-height:1.4;
+    color:var(--navy);
+    text-align:left;
+    opacity:0;
+    transform:translateX(8px) scale(0.9);
+    transform-origin:right bottom;
+    pointer-events:none;
+    transition:opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+  }
+  .fab-bubble::after{
+    content:"";
+    position:absolute;
+    right:-6px;
+    bottom:8px;
+    width:12px;
+    height:12px;
+    background:var(--paper);
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    transform:rotate(-45deg);
+  }
+  .fab-kris.show .fab-bubble.in{
+    opacity:1;
+    transform:translateX(0) scale(1);
+  }
+  @media (max-width:720px){
+    .fab-bubble{max-width:170px; font-size:0.8rem;}
+  }
+  @media (max-width:720px){
+    .fab-kris{right:14px; bottom:14px; width:68px; height:68px;}
+  }
+
   /* ---------- Confetti canvas ---------- */
   #confetti-canvas{
     position:fixed;
@@ -1015,7 +1113,7 @@
 </style>
 <noscript>
   <style>
-    .reveal, .reveal-scale, .unlock-toast{opacity:1 !important; transform:none !important;}
+    .reveal, .reveal-scale{opacity:1 !important; transform:none !important;}
     .compare-panel{max-height:none; opacity:1; margin-top:44px;}
     .compare-row[data-kind="trabalhador"] .compare-fill{width:14%;}
     .compare-row[data-kind="outros"] .compare-fill{width:50%;}
@@ -1072,7 +1170,7 @@
         {
           "@type": "Question",
           "name": "Quem pode contratar o Crédito do Trabalhador?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Trabalhadores com carteira assinada (CLT), incluindo domésticos e rurais, desde que tenham margem consignável disponível." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Trabalhadores com carteira assinada (CLT), desde que tenham margem consignável disponível." }
         },
         {
           "@type": "Question",
@@ -1108,6 +1206,14 @@
 <body>
 
 <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+<a class="fab-kris" id="whatsappBtn6" href="#" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Kris no WhatsApp" title="Falar com a Kris no WhatsApp">
+  <img id="fabAvatar" src="src/img/avatar/final.webp" alt="" width="160" height="160" loading="lazy">
+  <span class="fab-bubble" id="fabBubble" aria-hidden="true"></span>
+  <span class="fab-wpp" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.51 3.58 1.4 5.06L2 22l5.2-1.5a9.86 9.86 0 0 0 4.84 1.27h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.06h-.01a8.14 8.14 0 0 1-4.15-1.14l-.3-.18-3.09.89.9-3.01-.2-.31a8.13 8.13 0 0 1-1.26-4.4c0-4.5 3.66-8.16 8.17-8.16 2.18 0 4.23.85 5.77 2.4a8.1 8.1 0 0 1 2.39 5.77c0 4.5-3.67 8.14-8.22 8.14Zm4.48-6.12c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.78.95-.14.16-.29.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.35-1.67-.14-.24-.02-.37.11-.49.11-.11.24-.29.36-.43.12-.15.16-.24.24-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.12.16 1.73 2.65 4.2 3.71.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.44-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"/></svg>
+  </span>
+</a>
 
 <!-- PROGRESS RAIL -->
 <nav class="rail" aria-label="Progresso da jornada">
@@ -1159,7 +1265,6 @@
       </div>
     </div>
     <div class="hero-copy">
-      <div class="eyebrow reveal in"><span class="chip">Etapa 01</span> Primeiro, vamos nos conhecer</div>
       <h1 class="reveal in d1" id="heroTitle">Oi, eu sou a <em>Kris</em>.</h1>
       <div class="hero-title-sub reveal in d1">
         <span>Consultora financeira</span>
@@ -1173,10 +1278,6 @@
         </button>
         <button class="btn btn-ghost" data-scroll="fase-04">Já quero contratar</button>
       </div>
-      <div class="unlock-toast" id="toast01">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
-        Etapa 01 desbloqueada
-      </div>
     </div>
   </div>
 </header>
@@ -1187,7 +1288,7 @@
 <section class="phase-objetivo" id="fase-02" data-phase-section="2">
   <div class="wrap">
     <div class="phase-head">
-      <div class="eyebrow reveal"><span class="chip">Etapa 02</span> Vamos entender seu momento</div>
+      <div class="eyebrow reveal">Vamos entender seu momento</div>
       <h2 class="reveal">Qual o objetivo do seu dinheiro extra?</h2>
       <p class="reveal d1">Arraste o valor no simulador ou escolha um objetivo e veja como o Crédito do Trabalhador se compara a outras formas de crédito.</p>
     </div>
@@ -1277,7 +1378,7 @@
 <section class="phase-02" id="fase-03" data-phase-section="3">
   <div class="wrap">
     <div class="phase-head">
-      <div class="eyebrow reveal"><span class="chip">Etapa 03</span> Agora, vamos entender</div>
+      <div class="eyebrow reveal">Agora, vamos entender</div>
       <h2 class="reveal">O que é o Crédito do Trabalhador?</h2>
       <p class="reveal d1">É um crédito consignado para quem trabalha com carteira assinada: as parcelas saem direto da folha de pagamento, o que permite juros bem mais baixos. Veja as respostas para as principais dúvidas.</p>
     </div>
@@ -1286,7 +1387,7 @@
       <div class="faq-card reveal">
         <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-3.4 3.8-5 7-5s5.8 1.6 7 5"/></svg></span>
         <h3>Quem pode contratar?</h3>
-        <p>Trabalhadores com carteira assinada (CLT), incluindo domésticos e rurais, desde que tenham margem consignável disponível.</p>
+        <p>Trabalhadores com carteira assinada (CLT), que tenham margem consignável disponível.</p>
       </div>
       <div class="faq-card reveal d1">
         <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
@@ -1330,21 +1431,15 @@
         Pronto para o próximo passo
         <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
-      <div class="unlock-toast" id="toast02" style="margin-top:0;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
-        Etapa 03 desbloqueada
-      </div>
     </div>
   </div>
 </section>
-
-<div class="seam"><svg viewBox="0 0 26 64"><path d="M13 0v64" stroke="currentColor" stroke-width="1.5"/></svg></div>
 
 <!-- ================= FASE 04 — CONTRATAR ================= -->
 <section class="phase-03" id="fase-04" data-phase-section="4">
   <div class="wrap">
     <div class="phase-head">
-      <div class="eyebrow reveal"><span class="chip">Etapa 04</span> Você chegou ao último nível</div>
+      <div class="eyebrow reveal">Você chegou ao último nível</div>
       <h2 class="reveal">Pronto para dar o próximo passo?</h2>
       <p class="reveal d1">Se você já entendeu o processo e deseja prosseguir, pode acessar o ambiente de contratação.</p>
     </div>
@@ -1353,7 +1448,6 @@
       <div class="final-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
-      <div class="mono" style="color:var(--gold-soft); font-size:0.68rem;">Etapa 04 desbloqueada</div>
       <h2 style="margin-top:14px;">Jornada desbloqueada.</h2>
       <p>Agora você tem mais informações para decidir qual é o próximo passo para você.</p>
 
@@ -1398,7 +1492,6 @@
         <div class="col">
           <span class="mono">Entender</span>
           <a href="#fase-03">Sobre o produto</a>
-          <a href="https://www.caixa.gov.br/voce/credito-financiamento/emprestimo/consignado/credito-do-trabalhador/paginas/default.aspx" target="_blank" rel="noopener noreferrer">Página oficial (Caixa)</a>
         </div>
         <div class="col">
           <span class="mono">Contratar</span>
@@ -1448,7 +1541,7 @@
   var WHATSAPP_NUMBER = "5518920012343";
   var WHATSAPP_MSG = "Olá, Kris! Gostaria de tirar algumas dúvidas sobre o Crédito do Trabalhador.";
   var waLink = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MSG);
-  ["whatsappBtn","whatsappBtn2","whatsappBtn3","whatsappBtn4","whatsappBtn5"].forEach(function(id){
+  ["whatsappBtn","whatsappBtn2","whatsappBtn3","whatsappBtn4","whatsappBtn5","whatsappBtn6"].forEach(function(id){
     var el = document.getElementById(id);
     if(el) el.href = waLink;
   });
@@ -1616,8 +1709,53 @@
   var maxPhaseReached = 1;
   var confettiFired = false;
 
+  // ---------- Avatar flutuante por etapa ----------
+  var fabKris = document.querySelector('.fab-kris');
+  var fabAvatar = document.getElementById('fabAvatar');
+  var fabBubble = document.getElementById('fabBubble');
+  var FAB_AVATAR = { 2:'final', 3:'duvida', 4:'dinheiro' };
+  var FAB_MSG = {
+    2: 'Quer ajuda com a simulação? Me chama!',
+    3: 'Ficou com alguma dúvida? Fala comigo!',
+    4: 'Pronto para dar o próximo passo? Estou aqui!'
+  };
+  var fabBubbleTimer = null;
+
+  function showFabBubble(phase){
+    if(!fabBubble || !FAB_MSG[phase]) return;
+    fabBubble.textContent = FAB_MSG[phase];
+    fabBubble.classList.add('in');
+    if(fabBubbleTimer) clearTimeout(fabBubbleTimer);
+    fabBubbleTimer = setTimeout(function(){
+      fabBubble.classList.remove('in');
+    }, 5000);
+  }
+
+  function updateFab(phase){
+    if(!fabKris || !fabAvatar) return;
+    var name = FAB_AVATAR[phase];
+    if(name){
+      var src = 'src/img/avatar/' + name + '.webp';
+      var firstShow = !fabKris.classList.contains('show');
+      if(fabAvatar.getAttribute('src') !== src){
+        fabAvatar.setAttribute('src', src);
+        fabKris.classList.remove('pop');
+        void fabKris.offsetWidth;
+        fabKris.classList.add('pop');
+      }
+      fabKris.classList.add('show');
+      if(firstShow || fabBubble.textContent !== FAB_MSG[phase]){
+        showFabBubble(phase);
+      }
+    } else {
+      fabKris.classList.remove('show');
+      fabBubble && fabBubble.classList.remove('in');
+    }
+  }
+
   function setRailState(phase){
     setProgressEmoji(phase);
+    updateFab(phase);
     railSteps.forEach(function(step){
       var p = parseInt(step.getAttribute('data-phase'), 10);
       step.classList.remove('is-active','is-done','is-locked','just-unlocked');
@@ -1654,11 +1792,6 @@
           maxPhaseReached = phase;
           pulseUnlock(phase);
         }
-        // toast reveals tied to their own phase completion markers
-        if(phase === 3){
-          var t2 = document.getElementById('toast02');
-          if(t2) t2.classList.add('in');
-        }
         if(phase === 4){
           if(!confettiFired){
             confettiFired = true;
@@ -1669,12 +1802,6 @@
     });
   }, {threshold:[0,0.35,0.6]});
   phaseSections.forEach(function(sec){ phaseObs.observe(sec); });
-
-  // Fase 01 toast appears shortly after load since it's already unlocked
-  setTimeout(function(){
-    var t0 = document.getElementById('toast01');
-    if(t0) t0.classList.add('in');
-  }, 1200);
 
   // ---------- Confetti / celebration ----------
   var confettiRunning = false;
