@@ -1,85 +1,57 @@
 # Contexto do site
 
-Este repositório contém a landing page da consultora financeira **Kris**, especializada em orientar clientes sobre o **Crédito do Trabalhador**.
+Este repositório contém o site da **Kris**, consultora financeira da **Poupacred** (CNPJ 07.899.160/0001-63, Presidente Prudente – SP), especializada no **Crédito do Trabalhador** — o consignado do Governo Federal para trabalhadores CLT. Publicado via GitHub Pages em `https://krisconsultora.github.io/`.
 
-## Objetivo principal
+## Estrutura do repositório
 
-O site foi desenvolvido como uma experiência de jornada de desbloqueio, com foco em:
+- `index.html` — landing page principal (HTML, CSS e JS em um único arquivo).
+- `credito-trabalhador/` — cluster de guias SEO com `index.html` (hub "Central de guias") + 4 artigos:
+  - `o-que-e-o-credito-do-trabalhador.html`
+  - `quem-pode-contratar-o-credito-do-trabalhador.html`
+  - `como-contratar-o-credito-do-trabalhador.html`
+  - `o-que-acontece-se-eu-perder-o-emprego.html`
+- `noticias/index.html` — agregador de notícias via RSS do Google Notícias (fetch client-side com 2 proxies CORS em cascata + fallback de erro).
+- `robots.txt` — libera buscadores e 8 crawlers de IA (GPTBot, Google-Extended, ClaudeBot, PerplexityBot etc.).
+- `sitemap.xml` — todas as páginas; o hub tem prioridade 0.9, notícias `changefreq: daily`.
+- `llms.txt` — resumo do site para agentes de IA (padrão llmstxt.org).
+- `src/img/` — `kris_consultora.webp` (hero, 880px), `.png` original (usado só como og:image), `logo-poupacred.png`, `avatar/*.webp` (160px, avatares do botão flutuante).
 
-- Apresentar a Kris de forma humana, profissional e acolhedora.
-- Conduzir o visitante por uma progressão visual: conhecer, entender e contratar.
-- Criar um storytelling de scroll que revele fases com animações suaves.
-- Oferecer um momento de celebração ao chegar na etapa de contratação.
-- Manter a navegação livre, sem bloqueios artificiais.
+## Jornada da landing page
 
-## Estrutura da jornada
+Quatro etapas navegáveis pelo rail fixo no topo (Conhecer → Objetivo → Entender → Contratar), sem bloqueios reais:
 
-O site é organizado em fases sequenciais:
+1. **Etapa 1 — Hero** (`#fase-01`): foto da Kris com máscara radial (dissolve nas bordas/base), badge "● Online" pulsante no braço (link WhatsApp), título com saudação personalizável, CTAs "Quero entender melhor" / "Já quero contratar". No mobile, a saudação sobrepõe o final da foto (`margin-top` negativo no `.hero-copy`).
+2. **Etapa 2 — Objetivo** (`#fase-02`): cards de objetivo com **Simular em primeiro e painel comparativo já aberto** (slider de R$ 1.000 a R$ 100.000, juros do 1º mês por modalidade). Verde é mantido só na barra "Crédito do Trabalhador"/selo "Menor taxa" (semântica de mais barato).
+3. **Etapa 3 — Entender** (`#fase-03`): FAQ em grade de cards com ícones vermelhos + faixa-resumo navy + CTAs no card "Onde solicitar?".
+4. **Etapa 4 — Contratar** (`#fase-04`): fundo navy com curva cream no topo (`.phase-03::before`), cartão final com selo dourado, CTA "Contratar agora" (link Poupacred/techconsig) e alternativa WhatsApp. Confete de 💵 dispara uma vez ao chegar.
 
-1. **Fase 01 — Quem sou eu?**
-   - Título: "Oi, eu sou a Kris."
-   - Subtítulo: "Eu posso ajudar você a entender melhor suas opções de crédito antes de tomar uma decisão."
-   - Texto explicativo sobre tornar o crédito mais simples e claro.
-   - CTA: "Quero entender melhor" que faz scroll suave para a próxima seção.
+Fecho: seção "Conheça. Entenda. Decida." e rodapé com links (guias, notícias, contratação, WhatsApp, Instagram `@krisdhya.poupacred`) e bloco institucional da matriz Poupacred.
 
-2. **Fase 02 — Entenda o Crédito do Trabalhador**
-   - Tema: "Agora, vamos entender"
-   - Título: "O que é o Crédito do Trabalhador?"
-   - Subtítulo: "Antes de contratar, é importante entender como funciona."
-   - Bloco de explicação com três etapas: conhecer, tirar dúvidas, decidir.
-   - Cards de informação e comparativo de modalidades de crédito.
-   - Botão link para página oficial da Caixa sobre Crédito do Trabalhador.
+## Identidade visual
 
-3. **Fase 03 — Contratar**
-   - Tema: "Você chegou ao último nível"
-   - Título: "Pronto para dar o próximo passo?"
-   - Subtítulo: "Se você já entendeu o processo e deseja prosseguir, pode acessar o ambiente de contratação."
-   - CTA principal: "Contratar agora" abrindo em nova aba.
-   - CTA alternativo: "Entre em contato" via WhatsApp com mensagem pré-preenchida.
-   - Mensagem de conclusão da jornada: "Jornada desbloqueada."
+- Paleta: cream `#F6F2E9`, navy `#0A2A3D`, **vermelho Poupacred `#D30000`** (`--red`, cor de CTA/acento extraída da logo), dourado `#D6A94B` em detalhes, verde apenas para semântica de "melhor/online".
+- Tipografia: Fraunces (títulos; "Kris" em itálico vermelho no h1), Plus Jakarta Sans (texto), IBM Plex Mono (rótulos).
+- O subtítulo do hero ("Consultora financeira" + logo) espelha o estilo do título (Fraunces 600 navy).
 
-## Indicador de progresso
+## Interações e recursos do index.html
 
-O site tem uma barra fixa no topo que representa a jornada:
+- **Saudação por URL**: `?n=Nome` → "Oi Nome, eu sou a Kris." (inserido via `textContent`, primeira letra de cada palavra maiúscula, máx. 40 chars).
+- **Barra de progresso de scroll** na base do rail (gradiente vermelho→dourado) com emoji por etapa: 🤔 🚀 💡 🤑, com animação "pop" na troca.
+- **Botão flutuante (FAB)** com avatar da Kris que troca por etapa (`FAB_AVATAR`: 2=final, 3=duvida, 4=dinheiro), oculto no hero, fundo gradiente vermelho com anel pulsante e **balão de conversa** por etapa (`FAB_MSG`, some após 5s, clicável) — tudo abre o WhatsApp.
+- **WhatsApp centralizado**: constante `WHATSAPP_NUMBER = "5518920012343"` preenche todos os CTAs (`whatsappBtn`…`whatsappBtn6`).
+- **Parallax sutil**: foto do hero (12% da velocidade do scroll, via custom property `--px`) e brilho da etapa 4; atualizado no mesmo rAF da barra de progresso.
+- Reveals por IntersectionObserver, `prefers-reduced-motion` respeitado em tudo, fallback `<noscript>` deixa todo o conteúdo visível.
 
-- Fase atual destacada.
-- Fases futuras com aparência mais discreta.
-- Cadeado sutil que desaparece ao desbloquear.
-- Animação de confirmação em cada fase.
+## SEO
 
-## Direção visual
+- Meta tags com keywords em todas as páginas; título/descrição otimizados para "crédito do trabalhador" e variações ("consignado CLT", "desconto em folha").
+- JSON-LD: home tem `WebSite` + `Person` (Kris, com Instagram e Organization/CNPJ) + `FAQPage`; guias têm `Article` + `BreadcrumbList` (o de contratação tem `HowTo`); hub tem `CollectionPage` + `ItemList`.
+- Cluster hub-and-spoke: hub → artigos, artigos interligados via "Leia também", home linka tudo no rodapé.
+- Pendências manuais do dono: cadastrar em Google Search Console e Bing Webmaster Tools após publicar.
 
-A identidade visual segue os seguintes conceitos:
+## Convenções para agentes
 
-- Moderna, elegante e profissional.
-- Humana, confiável e levemente divertida.
-- Paleta: azul-marinho / azul-petróleo, branco, verde de ação, dourado em detalhes.
-- Grandes títulos, tipografia moderna, cards minimalistas e microinterações.
-
-## Animação e tecnologia
-
-O site é construído como uma única página HTML com CSS e JavaScript embutidos.
-
-Principais elementos técnicos:
-
-- `scroll-behavior: smooth`.
-- Observers de interseção para revelar elementos durante o scroll.
-- Animações que respeitam `prefers-reduced-motion`.
-- Canvas de confete para celebração da fase de contratação.
-- Botões de navegação entre fases e links externos.
-
-## Links importantes
-
-- Página oficial Caixa: https://www.caixa.gov.br/voce/credito-financiamento/emprestimo/consignado/credito-do-trabalhador/paginas/default.aspx
-- Link de contratação: https://poupacred.techconsig.com.br/privado/autocontratacao?ui=CxiYRMZxpTIwTwnk:TZU8zohdGenmTTW3USOHyw==:rxH6PVA&upi=vJLXPZQP7lVpfDrt:XxQfDJOF19rqaI4X6J-GVQ==:TDSV
-
-## Observações para agentes
-
-- O WhatsApp está configurado com o número real da Kris (`5518920012343`) na constante `WHATSAPP_NUMBER` do `index.html`.
-- O site já inclui a animação de confetes, mas ela dispara apenas uma vez por visita.
-- Embora exista um bloco de seleção de objetivos de crédito, a narrativa principal permanece focada em conhecer, entender e contratar.
-- A página atual usa um fluxo visual que inclui um conteúdo de objetivo e um comparativo de crédito antes de chegar à fase final.
-
-## Como usar
-
-Este arquivo serve como referência para agentes que precisam entender rapidamente o propósito, estrutura e funcionalidades do site.
+- Ao criar um novo guia: copiar o template visual de um artigo existente em `credito-trabalhador/`, usar slug com a pergunta completa, adicionar ao `sitemap.xml`, ao rodapé da home, ao hub (`credito-trabalhador/index.html`, card + ItemList do JSON-LD) e aos blocos "Leia também" dos demais guias. Atualizar `llms.txt` se relevante.
+- Conteúdo factual sempre com fonte (programa oficial/Caixa) e disclaimer de que condições dependem de análise de crédito.
+- Nunca inserir conteúdo de URL/feed via `innerHTML` — usar `textContent`/`DOMParser` (padrões já aplicados em `?n=` e nas notícias).
+- Imagens novas: converter para WebP no tamanho de exibição (~2x) com `cwebp`.
